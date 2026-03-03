@@ -3,11 +3,9 @@ import os
 from pathlib import Path
 
 # Prüfen, ob wir auf Render laufen
-if os.getenv("RENDER"):
-    DB_PATH = Path("/data/faq.db")
-else:
-    BASE_DIR = Path(__file__).resolve().parent
-    DB_PATH = BASE_DIR / "data" / "faq.db"
+
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = BASE_DIR / "data" / "faq.db"
 
 
 def init_database():
